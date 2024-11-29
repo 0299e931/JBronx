@@ -1,0 +1,49 @@
+-- God Mode Script
+-- This script makes the player invulnerable to damage.
+
+-- Function to enable god mode
+function enableGodMode(player)
+    -- Set the player's health to a very high value
+    player.health = math.huge  -- Infinite health
+    player.isInvulnerable = true  -- Set invulnerability flag
+end
+
+-- Function to disable god mode
+function disableGodMode(player)
+    player.health = 100  -- Reset health to a default value
+    player.isInvulnerable = false  -- Clear invulnerability flag
+end
+
+-- Function to handle damage taken by the player
+function onPlayerDamage(player, damageAmount)
+    if player.isInvulnerable then
+        -- If the player is invulnerable, ignore the damage
+        print("Damage ignored: Player is in god mode.")
+        return 0  -- Return 0 damage
+    else
+        -- If not invulnerable, apply the damage
+        player.health = player.health - damageAmount
+        print("Player took damage: " .. damageAmount)
+        return damageAmount
+    end
+end
+
+-- Example usage
+local player = {
+    health = 100,
+    isInvulnerable = false
+}
+
+-- Enable god mode for the player
+enableGodMode(player)
+
+-- Simulate damage
+local damageTaken = onPlayerDamage(player, 50)  -- This should be ignored
+print("Player's current health: " .. player.health)  -- Should print "infinite" or a very high number
+
+-- Disable god mode for the player
+disableGodMode(player)
+
+-- Simulate damage again
+damageTaken = onPlayerDamage(player, 50)  -- This should apply damage
+print("Player's current health: " .. player.health)  -- Should print 50
