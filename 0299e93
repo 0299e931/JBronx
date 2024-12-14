@@ -68,7 +68,7 @@ MainTab:CreateButton({
 
 -- Create a button for Aimbot prediction
 MainTab:CreateButton({
-    Name = "(❗Put |Camera aimbot| prediction 0.67346❗)",
+    Name = "(❗Put |Camera aimbot| prediction 0.067346❗)",
     Callback = function()
         -- Placeholder for Aimbot prediction functionality
     end,
