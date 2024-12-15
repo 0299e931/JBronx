@@ -55,7 +55,7 @@ MainTab:CreateButton({
 
 -- Create a button for Aimbot prediction
 MainTab:CreateButton({
-    Name = "(❗Put |Camera aimbot| prediction 0.067346❗)",
+    Name = "(❗Put |Camera aimbot| prediction 0.063746❗)",
     Callback = function()
         -- Placeholder for Aimbot prediction functionality
     end,
@@ -170,7 +170,7 @@ InstaLootTab:CreateButton({
                 if object:IsA("ProximityPrompt") then
                     object.ActionText = "" -- Optional: Clear the action text
                     object.RequiresLineOfSight = false -- Optional: Disable line of sight requirement
-                    object.HoldDuration = 0 -- Set hold duration to 0 for instant activation
+                    object.HoldDuration = 0.000001 -- Set hold duration to 0 for instant activation
                 end
             end
         end
@@ -183,7 +183,7 @@ InstaLootTab:CreateButton({
             if descendant:IsA("ProximityPrompt") then
                 descendant.ActionText = "" -- Optional: Clear the action text
                 descendant.RequiresLineOfSight = false -- Optional: Disable line of sight requirement
-                descendant.HoldDuration = 0 -- Set hold duration to 0 for instant activation
+                descendant.HoldDuration = 0.000001 -- Set hold duration to 0 for instant activation
             end
         end)
     end
